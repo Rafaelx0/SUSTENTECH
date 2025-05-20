@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sustentech - Tela do Cliente</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-image: url('imagens/imagemfundo.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      color: white;
+      display: flex;
+      height: 100vh;
+    }
+    .overlay {
+      background-color: rgba(0,0,0,0.7);
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      position: relative;
+    }
+    .sidebar {
+      background-color: #16a34a; /* verde */
+      width: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+    .sidebar button {
+      background: transparent;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 1.5rem;
+      padding: 0.5rem 0;
+    }
+    .form-container {
+      background: white;
+      color: black;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      width: 500px;
+      box-shadow: 0 4px 8px rgb(0 0 0 / 0.3);
+    }
+    .form-container label {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-weight: 600;
+      font-size: 0.875rem;
+    }
+    .form-container input {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border-radius: 0.25rem;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    .btn-submit {
+      background-color: #22c55e; /* verde */
+      color: black;
+      font-weight: 700;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 0.25rem;
+      width: 100%;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .btn-submit:hover {
+      background-color: #16a34a;
+    }
+    .logo-bottom {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      opacity: 0.3;
+      width: 100px;
+      user-select: none;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<!-- ...mantém <head> e <style> exatamente como você escreveu... -->
+
+  <body>
+    <nav class="sidebar">
+      <button title="Menu">&#128100;</button>
+      <button title="Sair" onclick="location.href='login.html'">&#10005;</button>
+    </nav>
+  
+    <main class="overlay">
+      <form class="form-container" id="solicitacaoForm">
+
+        <div class="mb-6 text-center">
+          <h1 class="text-xl font-bold text-green-600">SOLICITÇÃO DE COLETA</h1>
+        </div>
+
+        <label for="produto">Produto</label>
+        <input type="text" id="produto" name="produto" required />
+  
+        <label for="marca">Marca</label>
+        <input type="text" id="marca" name="marca" required />
+  
+        <label for="localizacao">Localização</label>
+        <input type="text" id="localizacao" name="localizacao" required />
+  
+        <label for="bairro">Bairro</label>
+        <input type="text" id="bairro" name="bairro" required />
+  
+        <label for="complemento">Complemento</label>
+        <input type="text" id="complemento" name="complemento" />
+  
+        <button onclick="location.href='confirmacao.html'" type="submit" class="btn-submit">Solicitar</button>
+      </form>
+  
+      <img src="imagens/Logo_Vertical.png" alt="Sustentech Logo" class="logo-bottom" />
+    </main>
+  </body>
+  
